@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+{% load static %}
+{% block main %}
+    <form action="/register" method="POST">
+        {% csrf_token %}
+        <h1>School Enrollment Form / शाळा प्रवेश फॉर्म</h1>
+
+        <label>Student's Full Name / विद्यार्थ्याचे पूर्ण नाव:</label>
+        <input type="text"  required name="fname">
+
+        <label>Mother's Full Name / आईचे पूर्ण नाव:</label>
+        <input type="text"  required name="mname">
+
+        <label>Date of Birth / जन्मतारीख:</label>
+        <input type="date"  required name="dob">
+
+        <label>Gender / लिंग:</label>
+        <select  required name="gender">
+            <option value="">Please Select / कृपया निवडा</option>
+            <option value="Male">Male / पुरुष</option>
+            <option value="Female">Female / स्त्री</option>
+        </select>
+
+        <label>Religion / धर्म:</label>
+        <input type="text"  placeholder="Religion/ धर्म"  required name="religion">
+
+        <label>Category / श्रेणी:</label>
+        <select required name="category">
+            <option value="">Please Select / कृपया निवडा</option>
+            <option value="OBC">OBC / इतर मागासवर्गीय</option>
+            <option value="SC">SC / अनुसूचित जाती</option>
+            <option value="VJNT">VJNT / विमुक्त जाती आणि भटक्या जमाती</option>
+        </select>
+
+        <label>Place of Birth / जन्मस्थान:</label>
+        <input type="text"  required name="pob">
+
+        <label>Email ID / ई-मेल आयडी:</label>
+        <input type="email"  placeholder="Email/ ई-मेल" required name="email">
+
+        <label>Mobile Phone Number / मोबाइल क्रमांक:</label>
+        <input type="text"  placeholder="00000 00000" required name="mob">
+
+        <label>Parent's Aadhar Card Number / पालकांचा आधार क्रमांक:</label>
+        <input type="text"  placeholder="0000 0000 0000" required name="p_adhar">
+
+        <label>Student's Aadhar Card Number / विद्यार्थ्याचा आधार क्रमांक:</label>
+        <input type="text"  placeholder="0000 0000 0000" required name="c_adhar">
+
+        <label>Permanent Address / स्थायी पत्ता:</label>
+        <input type="text"  placeholder="Street Address/ रस्ता पत्ता" required name="street">
+        <input type="text"  placeholder="Landmark/ ओळख चिन्ह" required name="landmark">
+        <div class="input-group">
+            <input type="text"   placeholder="State/ राज्य" required name="state">
+            <input type="text"  placeholder="Postal/Pin Code/ पिन कोड"  required name="pincode">
+        </div>
+
+        <div class="captcha-box">
+            <span class="captcha-code" id="captchaCode"></span><br>
+            <input type="text" id="captchaInput" placeholder="Enter CAPTCHA" required>
+        </div>
+        
+        <button type="submit" class="btn-submit">Submit / सबमिट करा</button>
+    </form>
+
+    {% endblock main %}

@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load static %}
+{% block main %}
+<div class="contact-container">
+        <form action="/contact-us" method="POST">
+            {% csrf_token %}
+            <h2>Contact Us/आमच्याशी संपर्क साधा</h2>
+            <div class="form-group">
+                <label for="name">Name/नाव:</label>
+                <input type="text" id="name" placeholder="Enter your name / तुमचे नाव प्रविष्ट करा" required name="name">
+            </div>
+            <div class="form-group">
+                <label for="email">E-mail/ई-मेल:</label>
+                <input type="email" id="email" placeholder="Enter your email / तुमचा ई-मेल प्रविष्ट करा" required name="email">
+            </div>
+            <div class="form-group">
+                <label for="phone">Contact Number/संपर्क क्रमांक:</label>
+                <input type="tel" id="phone" placeholder="Enter your phone number / तुमचा फोन नंबर प्रविष्ट करा" required name="phone">
+            </div>
+            <div class="form-group">
+                <label for="message">Message/संदेश:</label>
+                <textarea id="message" placeholder="Enter your message / तुमचा संदेश प्रविष्ट करा" required name="message"></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Submit/सबमिट करा</button>
+        </form>
+</div>
+
+{% endblock main %}

@@ -1,0 +1,92 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Govind Ashramshala</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+<body  onload="generateCaptcha()">
+<!-- Navigation bar start -->
+<header>
+    <img src="{% static 'Image\Govind Ashramshala logo.png' %}" class="logo" alt="गोविंद आश्रम शाळा,एकशिव" >
+    
+    <!-- Hamburger Menu Checkbox -->
+    <input type="checkbox" id="menu-toggle">
+    <label for="menu-toggle" class="menu-icon">&#9776;</label>
+
+    <nav class="navbar">
+        <ul>
+            <li><a href="/">HOME</a></li>
+
+            <li><a href="/about">ABOUT</a></li>
+            
+            <!-- Dropdown -->
+            <li class="dropdown">
+                <a href="#">CAMPUS ▾</a>
+                <ul class="drop-item">
+                    <li><a href="/teacher">TEACHER</a></li>
+                    <li><a href="/event">EVENTS</a></li>
+                    <li><a href="/gallery">GALLERY</a></li>
+                    <li><a href="/news">NEWS</a></li>
+                </ul>
+            </li>
+
+            <li><a href="/contact-us">CONTACT US</a></li>
+            <li><a href="/register">REGISTRATION</a></li>
+        </ul>
+    </nav>
+</header>
+<!-- End navigation bar -->
+
+{%block main %} {%endblock main%}
+
+<!-- Footer start -->
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-section ">
+            <h3>About The School</h3>
+            <p>Welcome to Govind Ashram Shala Ekshiv, a premier educational institution dedicated to nurturing young minds with a holistic approach to learning. Our mission is to provide a high-quality education that fosters intellectual, emotional, and social development..</p>
+            <p> Our mission is to provide a high-quality education that fosters intellectual, emotional, and social development.</p>
+            <h3>Social</h3>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+
+        <div class="footer-section links">
+            <h3>Links</h3>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Teachers</a></li>
+                <li><a href="#">News</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-section contact">
+            <h3>Contact Info</h3>
+            <p><i class="fas fa-map-marker-alt"></i> Govind Ashram shala Ekshiv, Tal- Malashiras, Dist- Solapur</p>
+            <p><i class="fas fa-envelope"></i>  info@domain.com</p>
+            <p><i class="fas fa-phone"></i> +91-9960905064</p>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; Govind Ashram shala Ekshiv: All Rights Reserved. Designed & Developed by Imam Shaikh and Digvijay Tamhane </p>
+        <a href="#" class="back-to-top">Back to top <i class="fas fa-arrow-up"></i></a>
+    </div>
+</footer>
+
+<script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>
+<!-- Footer end -->

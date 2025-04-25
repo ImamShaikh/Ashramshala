@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% load static %}
+{% block main %}
+<!-- Events Section -->
+<section class="event">
+    <h2 class="event-head">School Events</h2>
+    <div class="event-div">
+    <div class="event_cards">
+        <div class="event_head">Sales Day</div>
+        <div class="event-desc">
+            <div class="event-box">
+                <h3>Photos</h3>
+                <div class="carousel-slider">
+                    <button class="prev" onclick="prevSlide(0)">&#10094;</button>
+                    <div class="carousel-track">
+                        <img src="{% static 'Image\WhatsApp Image 2025-03-20 at 16.41.10_66ac9365.jpg' %}" alt="Sales 1">
+                        <img src="{% static 'Image\WhatsApp Image 2025-03-20 at 16.41.10_489841e5.jpg' %}" alt="Sales 2">
+                        <img src="{% static 'Image\WhatsApp Image 2025-03-20 at 16.41.11_bbb037cc.jpg' %}" alt="Sales 3">
+                    </div>
+                    <button class="next" onclick="nextSlide(0)">&#10095;</button>
+                </div>
+            </div>
+            <p>Our Annual Sales Day was filled with energy and enthusiasm. Students presented various stalls, displaying great enthusiasm.</p>
+        </div>
+    </div>
+
+    <div class="event_cards">
+        <div class="event_head">Science Fair</div>
+        <div class="event-desc">
+            <div class="event-box">
+                <h3>Photos</h3>
+                <div class="carousel-slider">
+                    <button class="prev" onclick="prevSlide(1)">&#10094;</button>
+                    <div class="carousel-track">
+                        <img src="{% static 'Image\WhatsApp Image 2025-03-20 at 16.40.49_393fed85.jpg' %}" alt="Science Fair 1">
+                        <img src="{% static 'Image\WhatsApp Image 2025-03-20 at 16.40.50_56cdef13.jpg' %}" alt="Science Fair 2">
+                        <img src="{% static 'Image\WhatsApp Image 2025-03-20 at 16.40.50_d5c92756.jpg' %}" alt="Science Fair 3">
+                        <img src="{% static 'Image\WhatsApp Image 2025-03-20 at 16.40.51_0a5d0388.jpg' %}" alt="Science Fair 4">
+                    </div>
+                    <button class="next" onclick="nextSlide(1)">&#10095;</button>
+                </div>
+            </div>
+            <p>The Science Fair showcased students' innovative projects, demonstrating their creativity and knowledge in science and technology.</p>
+        </div>
+    </div>
+</div>
+</section>
+
+<!-- Videos Section -->
+<section class="video">
+    <h2 class="event-header">Event Videos</h2>
+<div class="video_files">
+    <div class="video-box">
+        <h3>Holi Celebration</h3>
+        <video controls>
+            <source src="{% static 'Image\WhatsApp Video 2025-03-20 at 16.40.48_fa8c03b0.mp4' %}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <div class="video-box">
+        <h3>Womens Day</h3>
+        <video controls>
+            <source src="{% static 'Image\WhatsApp Video 2025-03-20 at 16.40.48_19fa5dd8.mp4' %}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+</div>
+</section>
+{% endblock main %}

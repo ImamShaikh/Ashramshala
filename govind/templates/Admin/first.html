@@ -1,0 +1,80 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashmin Dashboard</title>
+  <link rel="stylesheet" href="{% static 'css/admin-style.css' %}">
+  <!-- Font Awesome 5+ -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+</head>
+<body>
+  <div class="dashboard-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="profile">
+        <img src="{% static 'Image\Govind Ashramshala logo.png' %}" alt="Profile" class="logo">
+      </div>
+      <nav class="nav-links">
+        <a href="/dashboard"><i class="	fa fa-tachometer-alt"></i>Dashboard</a>
+        <a href="/registration_details"><i class="fas fa-id-badge"></i>Registrations</a>
+        <a href="/contact-details"><i class="fas fa-address-book"></i>Contact Details</a>
+        <a href="#"><i class="fas fa-calendar-plus"></i>Add Events</a>
+        <a href="/add_teacher"><i class=" fas fa-user"></i>Add Teachers</a>
+        <a href="/update_teacher"><i class="fas fa-user-edit"></i>Update Teachers</a>
+        <a href="#"><span class="fas fa-sign-out-alt"></span>Logout</a>
+      </nav>
+    </aside>
+
+    <!-- Main content -->
+    <main class="main-content">
+      <header class="topbar">
+        <div class="search-box">
+          <input type="text" placeholder="Search">
+        </div>
+        <div class="topbar-right">
+          <div class="user-dropdown">
+            <img src="#" alt="User">
+            <span>John Doe</span>
+          </div>
+        </div>
+      </header>
+      {% block open %}<div class="dashboard">
+    
+        <div class="card">
+          <i class="fa fa-users"></i>
+          <h3>Total Students Registered</h3>
+          <p>125</p>
+        </div>
+    
+        <div class="card">
+          <i class="fa fa-envelope-open-text"></i>
+          <h3>Total Contacts Received</h3>
+          <p>42</p>
+        </div>
+    
+        <div class="card">
+          <i class="fa fa-newspaper"></i>
+          <h3>News Updates</h3>
+          <p>5</p>
+        </div>
+    
+        <div class="card">
+          <i class="fa fa-chalkboard-teacher"></i>
+          <h3>Teacher Details</h3>
+          <p>18</p>
+        </div>
+    
+        <div class="card">
+          <i class="fa fa-calendar-alt"></i>
+          <h3>Update Events</h3>
+          <p>3</p>
+        </div>
+    
+      </div> {% endblock open %}
+    </main>
+  </div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% load static %}
+{% block main %}
+
+    <section class="news-container">
+        <h1>School News</h1>
+        <div class="search-bar">
+            <input type="text" id="news-search" placeholder="Search news...">
+        </div>
+        <div class="news-filters">
+            <button class="filter-btn" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="latest">Latest</button>
+            <button class="filter-btn" data-filter="upcoming">Upcoming</button>
+        </div>
+
+        <div class="news-list">
+            <div class="news-item latest" data-content="The annual exam schedule has been officially released. Check out the new timetable and make sure you are prepared!">
+                <h2>Annual Exam Schedule Released</h2>
+                <p>Check the updated timetable for upcoming annual exams...</p>
+                <a href="#" class="read-more">Read More</a>
+            </div>
+            <div class="news-item upcoming" data-content="Admissions for the 2025 session start from June 1st. Be sure to apply on time!">
+                <h2>Admissions Open for 2025</h2>
+                <p>New session admissions start from June 1st...</p>
+                <a href="#" class="read-more">Read More</a>
+            </div>
+            <div class="news-item latest" data-content="The winners of the 2025 Science Fair have been announced. Congratulations to all participants!">
+                <h2>Science Fair Winners Announced</h2>
+                <p>Congratulations to the winners of the 2025 Science Fair...</p>
+                <a href="#" class="read-more">Read More</a>
+            </div>
+        </div>
+    </section>
+
+    <div class="popup" id="news-popup">
+        <h2 id="popup-title"></h2>
+        <p id="popup-content"></p>
+        <button onclick="closePopup()">Close</button>
+    </div>
+    
+    {% endblock main %}

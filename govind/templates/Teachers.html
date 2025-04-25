@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% load static %}
+{% block main %}
+
+<!-- Teacher Section Start -->
+<section id="teachers-section">
+    <h2>Our Teachers</h2>
+    <div class="row">
+        <div class="column">
+            <div class="card">
+                <img src="{% static 'Image\Teachers.png' %}" alt="Teacher 1">
+                <div class="container">
+                    <h2>Narale Sir</h2>
+                    <p class="title">Mathematics Teacher</p>
+                    <p>Expert in algebra and calculus.</p>
+                    <button class="button">Phone No.:8605519021</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="card">
+                <img src="{% static 'Image\teachers2.png' %}" alt="Teacher 2">
+                <div class="container">
+                    <h2>Shinde Sir</h2>
+                    <p class="title">Science Teacher</p>
+                    <p>Specialist in physics and chemistry.</p>
+                    <button class="button">Phone No.:9960921626</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="card">
+                <img src="{% static 'Image\teachers3.png' %}" alt="Teacher 3">
+                <div class="container">
+                    <h2>Landage Sir</h2>
+                    <p class="title">English Teacher</p>
+                    <p>Passionate about literature and grammar.</p>
+                    <button class="button">Phone No.:9970100889</button>
+                </div>
+            </div>
+        </div>
+
+        {% for p in teac %}
+        <div class="column">
+            <div class="card">
+                <img src="{{p.image.url}}" alt="Teacher 3">
+                <div class="container">
+                    <h2>{{p.name}}</h2>
+                    <p class="title">{{p.teach_sub }}</p>
+                    <p>{{p.expertise}}</p>
+                    <button class="button">{{p.p_no }}</button>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+<!-- Teacher Section End -->
+
+{% endblock main %}
