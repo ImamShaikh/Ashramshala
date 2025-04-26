@@ -54,7 +54,7 @@ def contact_us(request):
         contact.objects.create(name=name ,email=email,phone_no=phone, message=text)
         return redirect('/contact-us')
     else:
-        return render(request,'Contact-us.html')
+        return render(request,'contact-us.html')
     
 # Admin Panel Functionalities:
 def dash(request):
