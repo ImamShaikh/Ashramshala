@@ -12,19 +12,16 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 
 from pathlib import Path
 import os
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
 # Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
+# https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-6qx3hmpk4j*or4m(t$p%1^*l3*(s4a-ljnp#h$eo)ko%t-b9i0'
-
-# SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-
 ALLOWED_HOSTS = ['*']
 
 
@@ -43,6 +40,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',  # ✅ WhiteNoise for static files
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -50,6 +48,8 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'  # ✅ WhiteNoise compressed storage
 
 ROOT_URLCONF = 'govind.urls'
 
@@ -71,24 +71,20 @@ TEMPLATES = [
 WSGI_APPLICATION = 'govind.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/5.2/ref/settings/#databases
-
+# Database (MySQL)
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': "govindschool",
         'HOST': "localhost",
         'USER': "root",
-        'PASSWORD':"Imam@123",
-        'PORT':"3306"
+        'PASSWORD': "Imam@123",
+        'PORT': "3306"
     }
 }
 
 
 # Password validation
-# https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
-
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
@@ -106,30 +102,21 @@ AUTH_PASSWORD_VALIDATORS = [
 
 
 # Internationalization
-# https://docs.djangoproject.com/en/5.2/topics/i18n/
-
 LANGUAGE_CODE = 'en-us'
-
 TIME_ZONE = 'UTC'
-
 USE_I18N = True
-
 USE_TZ = True
 
 
 # Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/5.2/howto/static-files/
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]        # ✅ your CSS/JS here
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')          # ✅ where collectstatic puts files
 
-STATIC_URL = 'static/'
-STATIC_ROOT = os.path.join(BASE_DIR,'assets')
-STATICFILES_DIRS =[
-    os.path.join(BASE_DIR, 'static')
-]
-
+# Media files (uploads)
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR,'media')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
 
 # Default primary key field type
-# https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
-
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
