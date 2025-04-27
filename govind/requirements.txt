@@ -1,5 +1,5 @@
 mysqlclient==2.2.7
-﻿asgiref==3.8.1
+asgiref==3.8.1
 captcha==0.7.1
 certifi==2025.1.31
 charset-normalizer==3.4.1

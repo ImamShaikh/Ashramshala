@@ -216,7 +216,7 @@ button:hover {
     }
 
     .event_cards {
-        width: 768px;
+        width: auto;
         padding: 15px;
     }
     
@@ -234,12 +234,12 @@ button:hover {
     }
 
     .carousel-slider {
-        width: 580px;
+        width: auto;
         height: auto;
     }
 
     .carousel-slider .carousel-track img {
-        width: 580px;
+        width: auto;
         height: auto;
     }
 

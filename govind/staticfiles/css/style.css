@@ -938,88 +938,6 @@ input, select {
 
 
 /* EVENT */
-.event{
-    height: 600px;
-    width: 1570px;
-    background-color: rgb(91, 244, 68);
-}
-.events-container {
-    width: 90%;
-    margin: 50px auto;
-    max-width: 1200px;
-}
-.events-title {
-    font-size: 32px;
-    font-weight: bold;
-    text-align: center;
-    padding-top: 40px;
-    font-size: 50px;
-}
-.events-subtitle {
-    font-size: 16px;
-    color: #777;
-    margin-bottom: 30px;
-    text-align: center;
-    font-size: 20px;
-}
-.events-grid {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-.event-card {
-    background: #fff;
-    width: 30%;
-    min-width: 300px;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: 0.3s ease-in-out;
-}
-.event-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
-}
-.event-image {
-    width: 100%;
-    height: 180px;
-    background: #ccc;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 24px;
-    color: #444;
-}
-.event-details {
-    padding: 15px;
-    text-align: left;
-}
-.event-title {
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-.event-description {
-    font-size: 14px;
-    color: #555;
-    margin-bottom: 10px;
-}
-.event-meta {
-    font-size: 12px;
-    color: #888;
-    border-top: 1px solid #eee;
-    padding-top: 10px;
-}
-@media (max-width: 768px) {
-    .events-grid {
-        flex-direction: column;
-        align-items: center;
-    }
-    .event-card {
-        width: 90%;
-    }
-}
 
 
 /* CONTACT US FOR */
@@ -1348,169 +1266,106 @@ footer {
 
 
 /* EVENTS SECTION */
-.events {
-    max-width: 1200px;
-    margin: 100px auto;
-    padding: 20px;
-}
-
-.section-title {
+.h {
+    background-color: #fafbfc;
     text-align: center;
+    color: rgb(66, 206, 231);
+  padding-top: 300px;
+  }
+  
+  .t {
+    font-size:20px;
+    padding-top: 300px;
+  }
+  
+  .main {
+    margin: 300px;
+  }
+  
+  .section-t {
     font-size: 28px;
-    font-weight: bold;
+    color: #007bff;
     margin-bottom: 20px;
-}
-
-/* Event Box */
-.event {
-    background: #ffffff;
-    border-radius: 20px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    margin: 20px 0;
-    overflow: hidden;
-    transition: 0.4s ease-in-out;
-}
-
-.event:hover {
-    transform: scale(1.05);
-}
-
-/* Event Title Box */
-.event-title {
-    background: #FF9800;
-    color: white;
-    padding: 15px;
-    font-size: 22px;
-    font-weight: bold;
     text-align: center;
-}
-
-/* Event Content */
-.event-content {
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-/* Blue Box for Images */
-.event-box {
-    background: #6517EB;
-    padding: 15px;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    margin-bottom: 15px;
-    width: fit-content;
-    text-align: center;
-}
-
-.event-box h3 {
-    color: white;
-    margin-bottom: 10px;
-}
-
-/* VIDEOS SECTION */
-.videos {
-    max-width: 800px;
-    margin: 50px auto;
-    text-align: center;
-}
-
-.video-box {
-    background: #1E88E5;
-    padding: 20px;
-    margin: 20px 0;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    text-align: center;
-}
-
-.video-box h3 {
-    color: white;
-    margin-bottom: 10px;
-}
-
-.video-box video,
-.video-box iframe {
-    width: 100%;
-    height: 250px;
+  }
+  
+  .gallery-grid, .video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+    justify-items: center;
+  }
+  
+  .gallery-item, .video-item {
+    background-color: #fff;
     border-radius: 8px;
-}
-
-/* Carousel Styling */
-.carousel {
-    position: relative;
-    width: 500px; /* Increased width */
-    height: 350px; /* Increased height */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
-    border: 2px solid #ddd;
-    border-radius: 10px;
-}
-
-.carousel-track {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-}
-
-.carousel-track img {
-    width: 500px; /* Ensure images fit inside */
-    height: 350px;
-    object-fit: cover; /* Ensures images fill the box without distortion */
-    flex-shrink: 0;
-}
-
-/* Navigation Buttons */
-.carousel button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .gallery-item:hover, .video-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  .gallery-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 2px solid #ddd;
+  }
+  
+  .gallery-caption, .video-caption {
+    font-size: 1.2em;
     padding: 10px;
-    cursor: pointer;
-    font-size: 20px;
-}
-
-.prev {
-    left: 10px;
-}
-
-.next {
-    right: 10px;
-}
-button:hover {
-    background: rgba(0, 0, 0, 0.8);
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .event {
-        margin: 15px;
+    color: #333;
+  }
+  
+  .video-item video {
+    width: 100%;
+    height: 200px;
+    border-radius: 8px;
+    object-fit: cover;
+  }
+  
+  /* Footer Styles */
+  .footer {
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin-top: 40px;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .gallery-item img, .video-item video {
+      height: 150px;
     }
-
-    .event-title {
-        font-size: 20px;
-        padding: 10px;
+  
+    .section-t {
+      font-size: 1.8em;
+      color: #007bff;
     }
-
-    .carousel {
-        width: 250px;
+  }
+  
+  @media (max-width: 480px) {
+    .gallery-item img, .video-item video {
+      height: 120px;
     }
-
-    .carousel-track {
-        width: 750px; /* (3 images * 250px each) */
+  
+    .section-t {
+      font-size: 1.5em;
     }
-
-    .carousel img {
-        width: 250px;
+  
+    .gallery-caption, .video-caption {
+      font-size: 1em;
     }
+  }
 
-    .video-box video, .video-box iframe {
-        width: 250px;
-        height: 150px;
-    }
-}
+
 
 /* About US  */
 .main-section {

@@ -19,50 +19,6 @@ setInterval(() => {
 }, 3000);
 
 // Event JS
-let currentIndexes = {}; // Stores index for each carousel separately
-
-function showSlide(eventIndex) {
-    const carousels = document.querySelectorAll(".carousel-slider .carousel-track");
-    if (!currentIndexes[eventIndex]) currentIndexes[eventIndex] = 0;
-
-    const totalSlides = carousels[eventIndex].children.length;
-
-    if (currentIndexes[eventIndex] >= totalSlides) {
-        currentIndexes[eventIndex] = 0; // Loop back to first image
-    } else if (currentIndexes[eventIndex] < 0) {
-        currentIndexes[eventIndex] = totalSlides - 1; // Loop to last image
-    }
-
-    const offset = -currentIndexes[eventIndex] * 500; // Adjust width according to CSS
-    carousels[eventIndex].style.transform = `translateX(${offset}px)`;
-}
-
-function nextSlide(eventIndex) {
-    currentIndexes[eventIndex]++;
-    showSlide(eventIndex);
-}
-
-function prevSlide(eventIndex) {
-    currentIndexes[eventIndex]--;
-    showSlide(eventIndex);
-}
-
-// Initialize first slide position for each carousel
-document.querySelectorAll(".carousel-slider .carousel-track").forEach((_, i) => showSlide(i));
-
-// Add event listeners for navigation buttons
-document.querySelectorAll(".carousel-slider").forEach((carousel, index) => {
-    const prevBtn = carousel.querySelector(".prev");
-    const nextBtn = carousel.querySelector(".next");
-
-    if (prevBtn) {
-        prevBtn.addEventListener("click", () => prevSlide(index));
-    }
-
-    if (nextBtn) {
-        nextBtn.addEventListener("click", () => nextSlide(index));
-    }
-});
 
 // Gallery page
 let slideIndex = 0;
